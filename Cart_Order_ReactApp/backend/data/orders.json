@@ -1,0 +1,54 @@
+[
+  {
+    "items": [
+      {
+        "id": "m3",
+        "name": "Merchandise 3",
+        "price": "65.3",
+        "description": "Chasing Forever Miami - Tee",
+        "image": "images/Group 1826.png",
+        "quantity": 1
+      },
+      {
+        "id": "m10",
+        "name": "Merchandise 10",
+        "price": "65.10",
+        "description": "Chasing Forever Miami - Tee",
+        "image": "images/Group 1825.png",
+        "quantity": 3
+      },
+      {
+        "id": "m13",
+        "name": "Merchandise 13",
+        "price": "65.13",
+        "description": "Chasing Forever Miami - Tee",
+        "image": "images/Group 1824.png",
+        "quantity": 1
+      },
+      {
+        "id": "m15",
+        "name": "Merchandise 15",
+        "price": "65.15",
+        "description": "Chasing Forever Miami - Tee",
+        "image": "images/Group 1826.png",
+        "quantity": 1
+      },
+      {
+        "id": "m1",
+        "name": "Merchandise 1",
+        "price": "65.1",
+        "description": "Chasing Forever Miami - Tee",
+        "image": "images/Group 1824.png",
+        "quantity": 2
+      }
+    ],
+    "customer": {
+      "name": "R.M.Ravindu Miyuranga Adhikari",
+      "email": "test123@gamil.com",
+      "street": "Jayawaradanapura, wijeraramaya,97/2",
+      "postal-code": "15121",
+      "city": "Colombo"
+    },
+    "id": "315.30592398630455"
+  }
+]
