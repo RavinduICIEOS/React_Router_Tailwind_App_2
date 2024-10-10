@@ -1,55 +1,49 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import logoImg from '../assets/Logob.png';
 import media from '../assets/Group 1823b.png';
-import Button from '../UI/Button';
-import { useContext } from 'react';
+//import Button from '../UI/Button';
+import { useContext, useState } from 'react';
 import CartContext from '../store/CartContext';
-import UserProgressContext from '../store/UserProgressContext';
+//import UserProgressContext from '../store/UserProgressContext';
 import { IoCartOutline } from "react-icons/io5";
 
 function MainNavigation() {
 
+    const [showCheckoutDetails, setShowCheckoutDetails] = useState(false); // State to toggle checkout visibility
+
   const location = useLocation();
+
+  //const location = useLocation();
   const cartCtx = useContext(CartContext);
-  const userProgressCtx = useContext(UserProgressContext);
+ // const userProgressCtx = useContext(UserProgressContext);
 
 
   const totalCartItems = cartCtx.items.reduce((totalNumberOfItems, item) => {
       return totalNumberOfItems+ item.quantity;
   }, 0);
 
-  function handleShowCart(){
+ /* function handleShowCart(){
     console.log('Cart Button Clicked');
       userProgressCtx.showCart();
-  }
+  }*/
 
-  console.log('Current Progress:', userProgressCtx.progress); // Check current progress
+  //console.log('Current Progress:', userProgressCtx.progress); // Check current progress
 
   return (
-    <header className=" p-4 relative w-[1300px] h-9 top-[65px]">
+    <header className=" p-4 relative w-[1300px] h-9 top-[65px] font-josefin">
       <img
         src={logoImg}
         alt="A restaurant"
-        className="absolute  left-[150px] w-[93px] h-auto "
+        className="absolute left-[150px] w-[93px] h-auto "
       />
       <img
         src={media}
         alt="A restaurant"
         className="absolute left-[1310px] w-[140px] h-9"
       />
-
-        {/* Show the Cart button only on the merchandise page */}
-      {location.pathname === '/merchandise' && (
-        <Button textOnly onClick={handleShowCart} className='absolute w-16 h-16 top-[1px] left-[1100px] bg-gradient-to-r '>
-           <IoCartOutline className="text-6xl absolute top-[8px] left-[3px] "/> 
-           <span className="absolute top-[0px] left-[24px]  text-[#2c2ab1]  h-1 w-1  ">
-        ({totalCartItems})
-           </span>
-        </Button>
-      )}
      
       <nav>
-        <ul className="flex  absolute left-[582px] text-base ">
+        <ul className="flex absolute left-[582px] text-base ">
           <li className="mx-5">
             <NavLink
               to="/"
@@ -105,6 +99,50 @@ function MainNavigation() {
               Contact
             </NavLink>
           </li>
+          <li className="mx-5">
+            <NavLink
+              to="/shoppingcart"
+              className={({ isActive }) =>
+                isActive ? 'text-[#01ADB4] ' : 'text-primary-400'
+              }
+              end
+            >
+              <IoCartOutline className="w-10 h-10 absolute top-[-6px] " />
+              {/* Show the total number of items in the cart */}
+                {totalCartItems > 0 && (
+                  <span className="absolute top-[-8px] left-[532px]  bg-[#FF453A] text-white h-5 w-5 rounded-full flex items-center justify-center text-xs">
+                      {totalCartItems}
+                  </span>
+                )}
+            </NavLink>
+          </li>
+         
+          {showCheckoutDetails && ( // Conditionally render "Checkout Details"
+            <li className="mx-5">
+              <NavLink
+                to="/checkoutdetails"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#01ADB4]' : 'text-primary-400'
+                }
+                end
+              >
+                Checkout Details
+              </NavLink>
+            </li>
+          )}
+           {showCheckoutDetails && ( // Conditionally render "Checkout Details"
+            <li className="mx-5">
+              <NavLink
+                to="/Purchase"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#01ADB4]' : 'text-primary-400'
+                }
+                end
+              >
+                Purchase
+              </NavLink>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

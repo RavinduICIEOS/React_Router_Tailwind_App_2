@@ -4,6 +4,7 @@
       "name": "Merchandise 1",
       "price": "65.1",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White Black",
       "image": "images/Group 1824.png"
     },
     {
@@ -11,6 +12,7 @@
       "name": "Merchandise 2",
       "price": "65.2",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1825.png"
     },
     {
@@ -18,6 +20,7 @@
       "name": "Merchandise 3",
       "price": "65.3",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1826.png"
     },
     {
@@ -25,6 +28,7 @@
       "name": "Merchandise 4",
       "price": "65.4",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1827.png"
     },
     {
@@ -32,6 +36,7 @@
       "name": "Merchandise 5",
       "price": "65.5",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1824.png"
     },
     {
@@ -39,6 +44,7 @@
       "name": "Merchandise 6",
       "price": "65.6",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1825.png"
     },
     {
@@ -46,6 +52,7 @@
       "name": "Merchandise 7",
       "price": "65.7",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1826.png"
     },
     {
@@ -53,6 +60,7 @@
       "name": "Merchandise 8",
       "price": "65.8",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1827.png"
     },
     {
@@ -60,6 +68,7 @@
       "name": "Merchandise 9",
       "price": "65.9",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1824.png"
     },
     {
@@ -67,6 +76,7 @@
       "name": "Merchandise 10",
       "price": "65.10",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1825.png"
     },
     {
@@ -74,6 +84,7 @@
       "name": "Merchandise 11",
       "price": "65.11",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1826.png"
     },
     {
@@ -81,6 +92,7 @@
       "name": "Merchandise 12",
       "price": "65.12",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1827.png"
     },
     {
@@ -88,6 +100,7 @@
       "name": "Merchandise 13",
       "price": "65.13",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1824.png"
     },
     {
@@ -95,6 +108,7 @@
       "name": "Merchandise 14",
       "price": "65.14",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1825.png"
     },
     {
@@ -102,6 +116,7 @@
       "name": "Merchandise 15",
       "price": "65.15",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1826.png"
     },
     {
@@ -109,6 +124,7 @@
       "name": "Merchandise 16",
       "price": "65.16",
       "description": "Chasing Forever Miami - Tee",
+      "color": "White",
       "image": "images/Group 1827.png"
     }
   ] 
