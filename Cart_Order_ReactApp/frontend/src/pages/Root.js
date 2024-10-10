@@ -21,6 +21,15 @@ function RootLayout() {
     case '/contact':
       footerTop = 995;
       break;
+    case '/shoppingcart':
+      footerTop = 1400;
+      break;
+    case '/checkoutdetails':
+      footerTop = 2851;
+      break;
+    case '/purchase':
+        footerTop = 1335;//1135
+        break;
     default:
       footerTop = 2543;
   }

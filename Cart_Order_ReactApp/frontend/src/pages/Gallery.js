@@ -6,7 +6,7 @@ import img4 from '../assets/Rectangle 43.png';
 
 function Gallery() {
   return (
-    <div className="grid  gap-10 text-center " >
+    <div className="grid  gap-10 text-center font-['Josefin_Sans'] " >
       <PageContent title="">
         <div className="flex justify-around items-center gap-10 mb-10 ">
           <div>

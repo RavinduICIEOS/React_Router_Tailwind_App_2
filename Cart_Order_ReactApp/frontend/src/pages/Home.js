@@ -84,7 +84,7 @@ function HomePage() {
       </h2>
 
       <ul className="flex  p-20 m-10 gap-20 justify-between absolute top-[2313px] left-[121px] ">
-        {visibleMeals.map((meal) => (
+        {visibleMeals.map(({ color, ...meal }) => (
           <Cloths key={meal.id} meal={meal} showBuyNowButton={false} />
         ))}
       </ul>

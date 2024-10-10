@@ -25,6 +25,8 @@ app.get('/meals', async (req, res) => {
 
 app.post('/orders', async (req, res) => {
   const orderData = req.body.order;
+  //const paymentData = req.body.payment; // New: includes the payment method
+
 
   if (orderData === null || orderData.items === null || orderData.items.length === 0) {
     return res
@@ -35,23 +37,57 @@ app.post('/orders', async (req, res) => {
   if (
     orderData.customer.email === null ||
     !orderData.customer.email.includes('@') ||
-    orderData.customer.name === null ||
-    orderData.customer.name.trim() === '' ||
-    orderData.customer.street === null ||
-    orderData.customer.street.trim() === '' ||
-    orderData.customer['postal-code'] === null ||
-    orderData.customer['postal-code'].trim() === '' ||
+    orderData.customer.firstname === null ||
+    orderData.customer.firstname.trim() === '' ||
+    orderData.customer.lastname === null ||
+    orderData.customer.lastname.trim() === '' ||
+    orderData.customer.phone === null ||
+    orderData.customer.phone.trim() === '' || 
+    orderData.customer.streetaddress === null ||
+    orderData.customer.streetaddress.trim() === '' ||
+   /* orderData.customer['postal-code'] === null ||
+    orderData.customer['postal-code'].trim() === '' ||*/
     orderData.customer.city === null ||
-    orderData.customer.city.trim() === ''
+    orderData.customer.city.trim() === '' ||
+    orderData.customer.state === null ||
+    orderData.customer.state.trim() === '' ||
+    orderData.customer['zip-code'] === null || 
+    orderData.customer['zip-code'].trim() === '' ||
+
+    orderData.customer.card === null || 
+    orderData.customer.card.trim() === '' || 
+    orderData.customer.expiry === null || 
+    orderData.customer.expiry.trim() === '' ||
+    orderData.customer.cvc === null || 
+    orderData.customer.cvc.trim() === '' 
+
   ) {
     return res.status(400).json({
       message:
-        'Missing data: Email, name, street, postal code or city is missing.',
+        'Missing or invalid data: Email, first name, last name, or phone number is missing or incorrect.',
     });
   }
+  
+   // Check if it's a credit card payment and validate the card details
+  /* if (paymentData.method === 'credit') {
+    if (
+      paymentData.cardDetails.card === null ||
+      paymentData.cardDetails.card.trim() === '' ||
+      paymentData.cardDetails.expiry === null ||
+      paymentData.cardDetails.expiry.trim() === '' ||
+      paymentData.cardDetails.cvc === null ||
+      paymentData.cardDetails.cvc.trim() === ''
+    ) {
+      return res.status(400).json({ message: 'Missing or invalid credit card details.' });
+    }
+  }*/
 
   const newOrder = {
     ...orderData,
+    /*paymentMethod: paymentData.method,
+    ...(paymentData.method === 'credit' && {
+      cardDetails: paymentData.cardDetails
+    }),*/
     id: (Math.random() * 1000).toString(),
   };
   let allOrders = [];

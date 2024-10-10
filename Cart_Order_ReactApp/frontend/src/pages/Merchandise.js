@@ -21,7 +21,7 @@ export default function Merchandise(){
    
     return (
         <ul id="meals" className="flex flex-wrap list-none p-20 m-10 gap-0 justify-between">
-            {loadedMeals.map((meal) => (
+            {loadedMeals.map((meal ) => (
                 <Cloths key={meal.id} meal={meal} />
             ))}
         </ul>

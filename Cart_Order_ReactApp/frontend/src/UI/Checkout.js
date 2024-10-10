@@ -18,6 +18,9 @@ export default function Checkout() {
     const cartCtx = useContext(CartContext);
     const userProgressCtx = useContext(UserProgressContext);
 
+   // Using finalTotal from CartContext instead of recalculating
+   const finalTotal = cartCtx.finalTotal;  // Use finalTotal instead of recalculating
+
     const {
         data,
         isLoading: isSending,
@@ -26,10 +29,10 @@ export default function Checkout() {
         clearData
     } = useHttp('http://localhost:3000/orders', requestConfig);
 
-    const cartTotal = cartCtx.items.reduce(
+   /* const cartTotal = cartCtx.items.reduce(
         (totalPrice, item) => totalPrice + item.quantity * item.price,
         0
-    );
+    );*/
 
     function handleClose() {
         userProgressCtx.hideCheckout();
@@ -99,28 +102,34 @@ export default function Checkout() {
     
     return (
         <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleClose}>
-            <form onSubmit={handleSubmit} className="space-y-6 p-6  bg-amber-200 text-black font-semibold">
-                <h2 className="text-2xl font-bold mb-4">Checkout</h2>
+            <form onSubmit={handleSubmit} className="space-y-6 p-6  bg-amber-200 text-black font-semibold font-['Josefin_Sans']">
+                <h2 className="text-2xl font-bold mb-4">Checkout Details</h2>
                 <p className="text-lg font-medium">
-                    Total Amount: <span className="font-semibold">{currencyFormatter.format(cartTotal)}</span>
+                    Total Amount: <span className="font-semibold">{currencyFormatter.format(finalTotal)}</span>
                 </p>
 
                 <Input
-                    label="Full Name"
+                    label="FIRST NAME"
                     type="text"
                     id="name"
                     className="block w-full border border-gray-300 rounded-md p-2"
                 />
                 <Input
-                    label="E-Mail Address"
-                    type="email"
-                    id="email"
+                    label="LAST NAME"
+                    type="text"
+                    id="lname"
                     className="block w-full border border-gray-300 rounded-md p-2"
                 />
                 <Input
-                    label="Street"
+                    label="Phone Number"
                     type="text"
                     id="street"
+                    className="block w-full border border-gray-300 rounded-md p-2"
+                />
+                 <Input
+                    label="E-Mail Address"
+                    type="email"
+                    id="email"
                     className="block w-full border border-gray-300 rounded-md p-2"
                 />
                 <div className="flex space-x-4">
